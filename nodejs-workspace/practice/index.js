@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 
 var UserRoute = require("./routes/user.route");
 
+var authRoute = require("./routes/auth.route");
 const port = 3000;
 
 app.set("view engine", "pug");
@@ -18,7 +19,8 @@ app.get("/", function (req, res) {
     });
 });
 
-app.use("/users", UserRoute)
+app.use("/users", UserRoute);
+app.use("/auth", authRoute);
 
 app.listen(port, function () {
     console.log("listening to Port " + port);
