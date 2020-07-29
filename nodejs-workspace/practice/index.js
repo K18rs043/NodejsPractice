@@ -16,7 +16,7 @@ app.use(cookieParser());
 
 app.get("/", function (req, res) {
     res.render("index", {
-        name: "Tuan"
+        text: "this is the restaurant list page"
     });
 });
 

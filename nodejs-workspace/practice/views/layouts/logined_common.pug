@@ -19,10 +19,15 @@ html
                     a(class="nav-link", href="/users") List 
                         span(class="sr-only") (current)
                     li(class="nav-item")
-                    a(class="nav-link", href="/auth/login") Login 
-                        span(class="sr-only") (current)            
+                    a(class="nav-link", href="/create") Create 
+                        span(class="sr-only") (current)        
+                    li(class="nav-item")
+                    a(class="nav-link", href="/auth/logout") Logout 
+                        span(class="sr-only") (current)         
                 form(class="form-inline my-2 my-lg-0" action="/users/search", method="GET") 
                     input(class="form-control mr-sm-2", name="q", value=question, type="text", placeholder="Search", aria-label="Search") 
                     button(class="btn btn-outline-success my-2 my-sm-0") Search
+            if user
+                p= user.name        
         .container
             block content
