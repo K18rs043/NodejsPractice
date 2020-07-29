@@ -1,5 +1,6 @@
 var shortid = require("shortid");
 var db = require("../db");
+var md5 = require("md5");
 
 module.exports.index = function (req, res) {
     res.render("users/index", {
@@ -32,6 +33,7 @@ module.exports.get = function(req, res){
 
 module.exports.postId = function(req, res){
     req.body.id = shortid.generate();
+    req.body.password = md5(req.body.password);
     db.get("users").push(req.body).write();
     res.redirect("/users");
 }
