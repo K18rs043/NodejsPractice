@@ -1,0 +1,20 @@
+extends ./layouts/common
+
+block content 
+    h1 This is user list
+    table.table
+        tr
+            th Name
+            th Phone Number
+            th Address
+            th detail
+
+        
+        each restaurant in restaurants
+            tr
+                td= restaurant.name
+                td= restaurant.phone
+                td= restaurant.address
+                td
+                    a.btn.btn-light(href="/" + restaurant.id) View
+            

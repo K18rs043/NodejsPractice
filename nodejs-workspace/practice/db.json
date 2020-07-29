@@ -14,5 +14,14 @@
       "phone": "+818090639510",
       "id": "l5f6ousmb"
     }
+  ],
+  "restaurants": [
+    {
+      "name": "カレー",
+      "address": "福岡",
+      "phone": "123",
+      "price": 2000,
+      "id": 1
+    }
   ]
 }

@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
+var db = require("./db");
 
 var UserRoute = require("./routes/user.route");
 var cookieParser = require("cookie-parser");
@@ -19,6 +20,12 @@ app.get("/", function (req, res) {
         text: "this is the restaurant list page"
     });
 });
+
+app.get("/list", function(req, res){
+    res.render("list",{
+        restaurants: db.get("restaurants").value()
+    });
+})
 
 app.use("/users", UserRoute);
 app.use("/auth", authRoute);
